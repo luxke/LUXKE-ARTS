@@ -14,12 +14,12 @@ const Footer = () => {
 
         <div className="flex items-center space-x-2">
           <Phone size={20} />
-          <p className="text-sm">Call: 0234-5665</p>
+          <p className="text-sm">Call: 0740-723-526</p>
         </div>
 
         <div className="flex items-center space-x-2">
           <Mail size={20} />
-          <p className="italic text-sm">Email: kyekumba@gmail.com</p>
+          <p className="italic text-sm">Email: fkipkemboi40@gmail.com</p>
         </div>
 
         <div className="flex space-x-4">
