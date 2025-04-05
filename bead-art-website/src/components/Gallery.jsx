@@ -52,7 +52,6 @@ const Gallery= () => {
         ))}
       </div>
 
-      {/* Image Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {filteredImages.map((image) => (
           <motion.img
@@ -67,7 +66,6 @@ const Gallery= () => {
         ))}
       </div>
 
-      {/* Lightbox Modal */}
       {selectedImage && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50" onClick={() => setSelectedImage(null)}>
           <motion.img 
