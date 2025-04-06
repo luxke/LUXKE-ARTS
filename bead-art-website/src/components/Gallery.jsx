@@ -14,18 +14,18 @@ import Bead11 from "./image/BEAD 11.jpg";
 import Bead12 from "./image/BEAD 12.jpg";
 
 const images = [
-  { id: 1, src: Bead1, category: "Bracelets", price: "Ksh 350" },
-  { id: 2, src: Bead2, category: "Bracelets", price: "Ksh 400" },
-  { id: 3, src: Bead3, category: "Bracelets", price: "Ksh 300" },
-  { id: 4, src: Bead4, category: "Bracelets", price: "Ksh 450" },
-  { id: 5, src: Bead5, category: "Bracelets", price: "Ksh 370" },
-  { id: 6, src: Bead6, category: "Bracelets", price: "Ksh 390" },
-  { id: 7, src: Bead7, category: "Bracelets", price: "Ksh 360" },
-  { id: 8, src: Bead8, category: "Bracelets", price: "Ksh 340" },
-  { id: 9, src: Bead9, category: "Bracelets", price: "Ksh 410" },
-  { id: 10, src: Bead10, category: "Bracelets", price: "Ksh 380" },
-  { id: 11, src: Bead11, category: "Bracelets", price: "Ksh 390" },
-  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh 420" },
+  { id: 1, src: Bead1, category: "Bracelets", price: "Ksh. 300" },
+  { id: 2, src: Bead2, category: "Bracelets", price: "Ksh. 300" },
+  { id: 3, src: Bead3, category: "Bracelets", price: "Ksh. 300" },
+  { id: 4, src: Bead4, category: "Bracelets", price: "Ksh. 300" },
+  { id: 5, src: Bead5, category: "Bracelets", price: "Ksh. 300" },
+  { id: 6, src: Bead6, category: "Bracelets", price: "Ksh. 300" },
+  { id: 7, src: Bead7, category: "Bracelets", price: "Ksh. 300" },
+  { id: 8, src: Bead8, category: "Bracelets", price: "Ksh. 300" },
+  { id: 9, src: Bead9, category: "Bracelets", price: "Ksh. 300" },
+  { id: 10, src: Bead10, category: "Bracelets", price: "Ksh. 300" },
+  { id: 11, src: Bead11, category: "Bracelets", price: "Ksh. 300" },
+  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh. 300" },
 ];
 
 const Gallery = () => {

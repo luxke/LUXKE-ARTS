@@ -1,12 +1,28 @@
-const Home= () => {
-  return <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-  <h1 className="text-4xl font-bold text-blue-500"> 
-    LUXKE Bead Art Website 
-  </h1>
-  <p className="text-gray-700 mt-4">
-    Handcrafted bead art collections just for you!
-  </p>
-</div> ;
+const Home = () => {
+  return (
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+      {/* Background Image with blur */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
+        style={{ backgroundImage: `url('/Background.jpg')` }}
+      ></div>
+
+      {/* making dim) */}
+      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+
+      <div className="relative z-10 text-center px-4">
+        <h1 className="text-4xl font-bold text-white drop-shadow-lg">
+          LUXKE Bead Art 
+        </h1>
+        <p className="text-white mt-4 text-lg drop-shadow">
+          Handcrafted bead art collections just for you😍
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
+
+
