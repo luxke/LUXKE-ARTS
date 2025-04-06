@@ -14,23 +14,21 @@ import Bead11 from "./image/BEAD 11.jpg";
 import Bead12 from "./image/BEAD 12.jpg";
 
 const images = [
-  { id: 1, src: Bead1, category: "Bracelets" },
-  { id: 2, src: Bead2, category: "Bracelets" },
-  { id: 3, src: Bead3, category: "Bracelets" },
-  { id: 4, src: Bead4, category: "Bracelets" },
-  { id: 5, src: Bead5, category: "Bracelets" },
-  { id: 6, src: Bead6, category: "Bracelets" },
-  { id: 7, src: Bead7, category: "Bracelets" },
-  { id: 8, src: Bead8, category: "Bracelets" },
-  { id: 9, src: Bead9, category: "Bracelets" },
-  { id: 10, src: Bead10, category: "Bracelets" },
-  { id: 11, src: Bead11, category: "Bracelets" },
-  { id: 12, src: Bead12, category: "Bracelets" },
-
-
+  { id: 1, src: Bead1, category: "Bracelets", price: "Ksh 350" },
+  { id: 2, src: Bead2, category: "Bracelets", price: "Ksh 400" },
+  { id: 3, src: Bead3, category: "Bracelets", price: "Ksh 300" },
+  { id: 4, src: Bead4, category: "Bracelets", price: "Ksh 450" },
+  { id: 5, src: Bead5, category: "Bracelets", price: "Ksh 370" },
+  { id: 6, src: Bead6, category: "Bracelets", price: "Ksh 390" },
+  { id: 7, src: Bead7, category: "Bracelets", price: "Ksh 360" },
+  { id: 8, src: Bead8, category: "Bracelets", price: "Ksh 340" },
+  { id: 9, src: Bead9, category: "Bracelets", price: "Ksh 410" },
+  { id: 10, src: Bead10, category: "Bracelets", price: "Ksh 380" },
+  { id: 11, src: Bead11, category: "Bracelets", price: "Ksh 390" },
+  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh 420" },
 ];
 
-const Gallery= () => {
+const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState("All");
 
@@ -54,15 +52,22 @@ const Gallery= () => {
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {filteredImages.map((image) => (
-          <motion.img
+          <div
             key={image.id}
-            src={image.src}
-            alt="Bead Art"
-            className="w-full h-64 object-cover rounded-lg shadow-lg cursor-pointer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="bg-white rounded-lg shadow-md overflow-hidden relative cursor-pointer"
             onClick={() => setSelectedImage(image.src)}
-          />
+          >
+            <motion.img
+              src={image.src}
+              alt="Bead Art"
+              className="w-full h-64 object-cover"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            />
+            <div className="p-2 bg-gray-100 text-center">
+              <p className="text-gray-700 font-semibold">{image.price}</p>
+            </div>
+          </div>
         ))}
       </div>
 
