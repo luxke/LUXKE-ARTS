@@ -12,7 +12,6 @@ A modern, responsive website for showcasing handcrafted bead art collections. Bu
 - ⚡ Built with Vite for blazing-fast development
 
 ## 🚀 Tech Stack
-
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
