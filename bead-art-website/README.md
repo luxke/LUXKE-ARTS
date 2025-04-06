@@ -1,12 +1,20 @@
-# React + Vite
+# Luxke Bead Arts Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for showcasing handcrafted bead art collections. Built with **React** and **Tailwind CSS**, it features a dynamic gallery, dark mode toggle, and an elegant contact section for customer inquiries.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Beautifully designed homepage with background imagery
+- 🌙 Dark mode support with toggle
+- 🖼️ Image gallery with category filters and lightbox preview
+- 📞 Contact form for customer inquiries
+- 📱 Fully responsive design for mobile and desktop
+- ⚡ Built with Vite for blazing-fast development
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [Framer Motion](https://www.framer.com/motion/) (for animations)
+- [React Router](https://reactrouter.com/) (for navigation)
