@@ -1,19 +1,32 @@
+/* 
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+*/
+
 /*body {
   background-color: white;
   color: black;
  
 }
 
-body.dark-mode {
+body.darkmode {
   background-color: #1a202c; 
   color: white;
-}
+}*/
 
-body.dark-mode .navbar {
+/*body.darkmode .navbar {
   background-color: #2d3748;
   color: white;
 }
-*/
+
 /*:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
