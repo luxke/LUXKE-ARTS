@@ -1,4 +1,21 @@
-/* 
+.gradient-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: serif;
+  background: linear-gradient(
+    to right,
+    #000000 25%,
+    #DC2626 25% 50%,
+    #16A34A 50% 75%, 
+    #000000 75%      
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+/*
 body {
   background-color: white;
   color: black;
@@ -10,6 +27,7 @@ body {
   color: white;
 }
 */
+/* Dark Mode Toggle Styles */
 
 /*body {
   background-color: white;

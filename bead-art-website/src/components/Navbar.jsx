@@ -1,65 +1,112 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
+  const location = useLocation();
 
-  useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-  
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <p to="/" className="text-2xl font-bold text-gray-800 dark:text-white font-serif">
-          LUXKE ARTS
-        </p>
+    <nav className="bg-white shadow-md">
+      <div className="container mx-auto px-4">
+        {/* Main nav bar */}
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <p className="gradient-text text-2xl font-bold font-serif">
+            LUXKE ARTS
+          </p>
 
-        <ul className="hidden md:flex space-x-6">
-          <li><Link to="/" className="text-gray-600 dark:text-gray-300">Home</Link></li>
-          <li><Link to="/gallery" className="text-gray-600 dark:text-gray-300">Gallery</Link></li>
-          <li><Link to="/AboutPage" className="text-gray-600 dark:text-gray-300">About</Link></li>
-          <li><Link to="/contact" className="text-gray-600 dark:text-gray-300">Contact</Link></li>
-        </ul>
-
-        <div
-          className="relative flex items-center space-x-2 cursor-pointer"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          
-          <div className="relative w-14 h-7 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1">
-            <div className={`w-6 h-6 bg-white dark:bg-yellow-400 rounded-full shadow-md transform transition-transform duration-300 
-              ${darkMode ? "translate-x-7" : "translate-x-0"}`}>
-            </div>
+          {/* Desktop Navigation - centered */}
+          <div className="hidden md:flex absolute left-0 right-0 justify-center pointer-events-none">
+            <ul className="flex space-x-6 pointer-events-auto">
+              <li>
+                <Link 
+                  to="/" 
+                  className={`text-gray-600 hover:text-gray-950 ${isActive("/") ? "underline underline-offset-4 decoration-2" : ""}`}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/gallery" 
+                  className={`text-gray-600 hover:text-gray-950 ${isActive("/gallery") ? "underline underline-offset-4 decoration-2" : ""}`}
+                >
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/AboutPage" 
+                  className={`text-gray-600 hover:text-gray-950 ${isActive("/AboutPage") ? "underline underline-offset-4 decoration-2" : ""}`}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/contact" 
+                  className={`text-gray-600 hover:text-gray-950 ${isActive("/contact") ? "underline underline-offset-4 decoration-2" : ""}`}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
-          {darkMode ? <Moon className="text-gray-500" size={20} /> : <Sun className="text-yellow-500" size={20} />}
+
+          {/* Mobile menu button */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            className="md:hidden text-gray-600 hover:text-gray-900"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden">
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Menu - now pushes content down instead of overlapping */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? "max-h-96 py-4" : "max-h-0 py-0 overflow-hidden"}`}>
+          <ul className="flex flex-col space-y-2">
+            <li>
+              <Link 
+                to="/" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2 text-gray-600 hover:text-gray-900 ${isActive("/") ? "underline underline-offset-4 decoration-2" : ""}`}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/gallery" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2 text-gray-600 hover:text-gray-900 ${isActive("/gallery") ? "underline underline-offset-4 decoration-2" : ""}`}
+              >
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/AboutPage" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2 text-gray-600 hover:text-gray-900 ${isActive("/AboutPage") ? "underline underline-offset-4 decoration-2" : ""}`}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2 text-gray-600 hover:text-gray-900 ${isActive("/contact") ? "underline underline-offset-4 decoration-2" : ""}`}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-
-      {mobileMenuOpen && (
-        <ul className="md:hidden bg-gray-100 dark:bg-gray-800 p-4">
-          <li><Link to="/" className="block py-2">Home</Link></li>
-          <li><Link to="/gallery" className="block py-2">Gallery</Link></li>
-          <li><Link to="/AboutPage" className="block py-2">About</Link></li>
-          <li><Link to="/contact" className="block py-2">Contact</Link></li>
-        </ul>
-      )}
     </nav>
   );
 };
