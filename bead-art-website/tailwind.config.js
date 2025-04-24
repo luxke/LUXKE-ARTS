@@ -1,11 +1,11 @@
  /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class", // ← Required for manual toggling (via `data-theme` or class)
+  darkMode: "class",
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // ← Ensure this matches your file structure
+    "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
-    extend: {}, // ← Customize colors/fonts here if needed
+    extend: {}, 
   },
-  plugins: [], // ← Add Tailwind plugins if used (e.g., forms, typography)
+  plugins: [],
 };
