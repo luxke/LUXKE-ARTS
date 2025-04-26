@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -23,9 +24,10 @@ const Footer = () => {
         </div>
 
         <div className="flex space-x-4">
-          <Facebook size={20} className="text-blue-600 cursor-pointer" />
+          <a href="https://wa.me/message/6FSEOO4BXXLQP1" target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp size={20} className="text-green-500 cursor-pointer" />
+          </a>
           <Instagram size={20} className="text-pink-500 cursor-pointer" />
-          <Twitter size={20} className="cursor-pointer" />
         </div>
       </div>
 

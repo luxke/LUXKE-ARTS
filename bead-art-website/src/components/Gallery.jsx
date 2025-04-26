@@ -12,6 +12,16 @@ import Bead9 from "./image/BEAD 9.jpg";
 import Bead10 from "./image/BEAD 10.jpg";
 import Bead11 from "./image/BEAD 11.jpg";
 import Bead12 from "./image/BEAD 12.jpg";
+import Bead13 from "./image/BEAD 13.jpg";
+import Bead14 from "./image/BEAD 14.jpg";
+import Bead15 from "./image/BEAD 15.jpg";
+import Bead16 from "./image/BEAD 16.jpg";
+import Bead17 from "./image/BEAD 17.jpg";
+import Bead18 from "./image/BEAD 18.jpg";
+import Bead19 from "./image/BEAD 19.jpg";
+import Bead20 from "./image/BEAD 20.jpg";
+import Bead21 from "./image/BEAD 21.jpg";
+import Bead22 from "./image/BEAD 22.jpg";
 
 const images = [
   { id: 1, src: Bead1, category: "Bracelets", price: "Ksh. 300" },
@@ -25,7 +35,17 @@ const images = [
   { id: 9, src: Bead9, category: "Bracelets", price: "Ksh. 300" },
   { id: 10, src: Bead10, category: "Bracelets", price: "Ksh. 300" },
   { id: 11, src: Bead11, category: "Bracelets", price: "Ksh. 300" },
-  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh. 300" },
+  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh. 300", name: "Classic Red Bracelet" },
+  { id: 13, src: Bead13, category: "Waist Beads", price: "Ksh. 200" },
+  { id: 14, src: Bead14, category: "Waist Beads", price: "Ksh. 500" },
+  { id: 15, src: Bead15, category: "Waist Beads", price: "Ksh. 300" },
+  { id: 16, src: Bead16, category: "Waist Beads", price: "Ksh. 150" },
+  { id: 17, src: Bead17, category: "Waist Beads", price: "Ksh. 500" },
+  { id: 18, src: Bead18, category: "Waist Beads", price: "Ksh. 500" },
+  { id: 19, src: Bead19, category: "Waist Beads", price: "Ksh. 200" },
+  { id: 20, src: Bead20, category: "Waist Beads", price: "Ksh. 200" },
+  { id: 21, src: Bead21, category: "Waist Beads", price: "Ksh. 200" },
+  { id: 22, src: Bead22, category: "Waist Beads", price: "Ksh. 150" },
 ];
 
 const Gallery = () => {
@@ -39,7 +59,7 @@ const Gallery = () => {
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">Bead Art Gallery</h1>
 
       <div className="flex justify-center space-x-4 mb-6">
-        {["All", "Bracelets", "Anklets", "Waist Beads"].map((category) => (
+        {["All", "Bracelets","Anklets", "Waist Beads"].map((category) => (
           <button
             key={category}
             className={`px-4 py-2 rounded-lg font-medium ${filter === category ? "bg-blue-500 text-white" : "bg-gray-300 text-black"}`}
