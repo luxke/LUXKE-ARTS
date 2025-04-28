@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser"; 
 
 const Contact = () => {
+  const formRef = useRef(); 
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -14,14 +17,28 @@ const Contact = () => {
       return;
     }
 
-    // sending messages through console
-    console.log("Message Sent:", { name, email, message });
     
-    setIsSubmitted(true);
-//this is to reset the fields
-    setName("");
-    setEmail("");
-    setMessage("");
+    emailjs.sendForm(
+      "service_h4a8c41", 
+      "template_taklfol",
+      formRef.current,
+      "SPYFYxAuicY9m20O7"
+
+    )
+    .then(
+      (result) => {
+        console.log("Message Sent:", result.text);
+        setIsSubmitted(true);
+        
+        setName("");
+        setEmail("");
+        setMessage("");
+      },
+      (error) => {
+        console.error("Failed to send message:", error.text);
+        alert("Failed to send message. Please try again later.");
+      }
+    );
   };
 
   return (
@@ -33,9 +50,11 @@ const Contact = () => {
         className="w-full max-w-lg p-6 bg-white rounded-xl shadow-md"
       >
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Contact Us</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        
+        <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
+            name="name" 
             placeholder="Name"
             className="w-full p-3 border rounded-md"
             value={name}
@@ -44,6 +63,7 @@ const Contact = () => {
           />
           <input
             type="email"
+            name="email" 
             placeholder="Email"
             className="w-full p-3 border rounded-md"
             value={email}
@@ -51,6 +71,7 @@ const Contact = () => {
             required
           />
           <textarea
+            name="message" 
             placeholder="Your Message"
             className="w-full p-3 border rounded-md"
             rows="4"
