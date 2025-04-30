@@ -22,6 +22,19 @@ import Bead19 from "./image/BEAD 19.jpg";
 import Bead20 from "./image/BEAD 20.jpg";
 import Bead21 from "./image/BEAD 21.jpg";
 import Bead22 from "./image/BEAD 22.jpg";
+import Bead23 from "./image/BEAD 23.jpg";
+import Bead24 from "./image/BEAD 24.jpg";
+import Bead25 from "./image/BEAD 25.jpg";
+import Bead26 from "./image/BEAD 26.jpg";
+import Bead27 from "./image/BEAD 27.jpg";
+import Bead28 from "./image/BEAD 28.jpg";
+import Bead29 from "./image/BEAD 29.jpg";
+import Bead30 from "./image/BEAD 30.jpg";
+import Bead31 from "./image/BEAD 31.jpg";
+import Bead32 from "./image/BEAD 32.jpg";
+import Bead33 from "./image/BEAD 33.jpg";
+import Bead34 from "./image/BEAD 34.jpg";
+import Bead35 from "./image/BEAD 35.jpg";
 
 const images = [
   { id: 1, src: Bead1, category: "Bracelets", price: "Ksh. 300" },
@@ -35,7 +48,7 @@ const images = [
   { id: 9, src: Bead9, category: "Bracelets", price: "Ksh. 300" },
   { id: 10, src: Bead10, category: "Bracelets", price: "Ksh. 300" },
   { id: 11, src: Bead11, category: "Bracelets", price: "Ksh. 300" },
-  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh. 300", name: "Classic Red Bracelet" },
+  { id: 12, src: Bead12, category: "Bracelets", price: "Ksh. 300" },
   { id: 13, src: Bead13, category: "Waist Beads", price: "Ksh. 200" },
   { id: 14, src: Bead14, category: "Waist Beads", price: "Ksh. 500" },
   { id: 15, src: Bead15, category: "Waist Beads", price: "Ksh. 300" },
@@ -46,6 +59,19 @@ const images = [
   { id: 20, src: Bead20, category: "Waist Beads", price: "Ksh. 200" },
   { id: 21, src: Bead21, category: "Waist Beads", price: "Ksh. 200" },
   { id: 22, src: Bead22, category: "Waist Beads", price: "Ksh. 150" },
+  { id: 23, src: Bead23, category: "Anklets", price: "Ksh. 100" },
+  { id: 24, src: Bead24, category: "Anklets", price: "Ksh. 100" },
+  { id: 25, src: Bead25, category: "Anklets", price: "Ksh. 100" },
+  { id: 26, src: Bead26, category: "Anklets", price: "Ksh. 100" },
+  { id: 27, src: Bead27, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 28, src: Bead28, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 29, src: Bead29, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 30, src: Bead30, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 31, src: Bead31, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 32, src: Bead32, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 33, src: Bead33, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 34, src: Bead34, category: "Fixed Bracelet", price: "Ksh. 200" },
+  { id: 35, src: Bead35, category: "Fixed Bracelet", price: "Ksh. 200" },
 ];
 
 const Gallery = () => {
@@ -59,7 +85,7 @@ const Gallery = () => {
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">Bead Art Gallery</h1>
 
       <div className="flex justify-center space-x-4 mb-6">
-        {["All", "Bracelets","Anklets", "Waist Beads"].map((category) => (
+        {["All", "Bracelets","Anklets", "Waist Beads", "Fixed Bracelet"].map((category) => (
           <button
             key={category}
             className={`px-4 py-2 rounded-lg font-medium ${filter === category ? "bg-blue-500 text-white" : "bg-gray-300 text-black"}`}
