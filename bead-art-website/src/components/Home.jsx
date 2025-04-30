@@ -2,13 +2,11 @@ const Home = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Background Image with blur */}
       <div
         className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
         style={{ backgroundImage: `url('/Background.jpg')` }}
       ></div>
 
-      {/* making dim) */}
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
       <div className="relative z-10 text-center px-4">

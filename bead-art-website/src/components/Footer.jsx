@@ -1,5 +1,6 @@
 import { Instagram, Mail, Phone, MapPin} from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,8 +41,8 @@ const Footer = () => {
       <div className="text-center text-sm mt-4">
         <p>© 2025 Luxke Arts - Created by Luxke Companies</p>
         <p className="mt-2">
-          <a href="#" className="underline">Privacy Policy</a> | 
-          <a href="#" className="underline ml-2">Terms and Conditions</a>
+          <Link to="/privacy" className="underline hover:text-blue-500">Privacy Policy</Link> | 
+          <Link to="/Terms" className="underline hover:text-blue-500 ml-2">Terms and Conditions</Link>
         </p>
       </div>
     </footer>

@@ -11,14 +11,12 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        {/* Main nav bar */}
+      
         <div className="flex items-center justify-between h-16 relative">
-          {/* Left side - Logo */}
           <p className="gradient-text text-2xl font-bold font-serif">
             LUXKE BEAD ARTS
           </p>
 
-          {/* Center - Navigation */}
           <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 pointer-events-none">
             <ul className="flex space-x-6 pointer-events-auto">
               <li>
@@ -56,13 +54,11 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Right side - Cart and Menu */}
           <div className="flex items-center space-x-4">
             <a href="https://wa.me/c/254112402204" target="_blank>" rel="noopener noreferrer">
               <ShoppingCart size={50} className="text-gray-600 hover:text-gray-900 cursor-pointer" />
               </a>
 
-            {/* Mobile menu button */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
               className="md:hidden text-gray-600 hover:text-gray-900"
@@ -72,7 +68,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div className={`md:hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? "max-h-96 py-4" : "max-h-0 py-0 overflow-hidden"}`}>
           <ul className="flex flex-col space-y-2">
             <li>
