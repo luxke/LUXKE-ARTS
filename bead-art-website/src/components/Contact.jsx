@@ -49,6 +49,9 @@ const Contact = () => {
       (result) => {
         console.log("Message Sent:", result.text);
         setIsSubmitted(true);
+
+        setTimeout(() => setIsSubmitted(false), 3000);
+
         setName("");
         setEmail("");
         setMessage("");
