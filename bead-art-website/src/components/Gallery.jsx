@@ -83,18 +83,20 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">Bead Art Gallery</h1>
+      <div className="flex flex-wrap justify-center gap-2 mb-6">
+  {["All", "Bracelets", "Anklets", "Waist Beads", "Fixed Bracelet"].map((category) => (
+    <button
+      key={category}
+      className={`px-4 py-2 rounded-lg font-medium whitespace-nowrap ${
+        filter === category ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
+      }`}
+      onClick={() => setFilter(category)}
+    >
+      {category}
+    </button>
+  ))}
+</div>
 
-      <div className="flex justify-center space-x-4 mb-6">
-        {["All", "Bracelets","Anklets", "Waist Beads", "Fixed Bracelet"].map((category) => (
-          <button
-            key={category}
-            className={`px-4 py-2 rounded-lg font-medium ${filter === category ? "bg-blue-500 text-white" : "bg-gray-300 text-black"}`}
-            onClick={() => setFilter(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {filteredImages.map((image) => (
