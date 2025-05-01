@@ -10,26 +10,45 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const sanitizeInput = (input) => {
+    return input.replace(/(\r|\n|%0A|%0D)/gi, '').trim();
+  };
+
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+
+    const cleanName = sanitizeInput(name);
+    const cleanEmail = sanitizeInput(email);
+    const cleanMessage = sanitizeInput(message);
+
+    if (!cleanName || !cleanEmail || !cleanMessage) {
       alert("Please fill in all fields.");
       return;
     }
 
-    
-    emailjs.sendForm(
+    if (!isValidEmail(cleanEmail)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    const formData = {
+      from_name: cleanName,
+      from_email: cleanEmail,
+      message: cleanMessage,
+    };
+
+    emailjs.send(
       "service_h4a8c41", 
       "template_taklfol",
-      formRef.current,
+      formData,
       "SPYFYxAuicY9m20O7"
-
     )
     .then(
       (result) => {
         console.log("Message Sent:", result.text);
         setIsSubmitted(true);
-        
         setName("");
         setEmail("");
         setMessage("");
@@ -54,7 +73,7 @@ const Contact = () => {
         <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name" 
+            name="name"
             placeholder="Name"
             className="w-full p-3 border rounded-md"
             value={name}
@@ -63,7 +82,7 @@ const Contact = () => {
           />
           <input
             type="email"
-            name="email" 
+            name="email"
             placeholder="Email"
             className="w-full p-3 border rounded-md"
             value={email}
@@ -71,7 +90,7 @@ const Contact = () => {
             required
           />
           <textarea
-            name="message" 
+            name="message"
             placeholder="Your Message"
             className="w-full p-3 border rounded-md"
             rows="4"
