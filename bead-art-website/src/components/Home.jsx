@@ -16,6 +16,9 @@ const Home = () => {
         <p className="text-white mt-4 text-lg drop-shadow">
           Handcrafted bead art collections just for you😍
         </p>
+          <a href="/gallery"  className="inline-block px-6 py-3 border border-white text-white text-lg mt-4 rounded-lg transition duration-300 hover:bg-white hover:text-black hover:scale-105">
+          Shop Now
+          </a>
       </div>
     </div>
   );
